@@ -24,9 +24,13 @@ const flightSchema = new mongoose.Schema({
   },
   departs: {
     type: Date,
-    default: () => getNextYear(Date.now()),
-  }
-  
+    default: function(){
+      let date = new Date()
+      return date.setFullYear(date.getFullYear()+1)
+    },
+  } 
+}, {
+    timestamps: true
 })
 
 const Flight = mongoose.model('Flight', flightSchema)
