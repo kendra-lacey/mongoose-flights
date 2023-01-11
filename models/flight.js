@@ -2,14 +2,14 @@ import mongoose from 'mongoose'
 
 const Schema = mongoose.Schema
 
-function getNextYear(date){
-  return date.setFullYear(date.getFullYear() + 1)
-}
+// function getNextYear(date){
+//   return date.setFullYear(date.getFullYear() + 1)
+// }
 
 const flightSchema = new mongoose.Schema({
   airline: {
     type: String,
-    enum: ['American', 'Southwest', 'United']
+    enum: ['American', 'Southwest', 'United', 'Spirit']
   },
   airport: {
     type: String,

@@ -2,6 +2,12 @@ import { Flight } from "../models/flight.js"
 
 
 
+function newFlights(req, res) {
+  res.render('flights/new', {
+  title: "Add Flight",
+  })
+}
+
 
 
 
@@ -11,5 +17,5 @@ import { Flight } from "../models/flight.js"
 
 
 export {
-  
+  newFlights as new,
 }

@@ -76,6 +76,6 @@ nav > a.active {
   color: white;
 }
 
-.fas::before {
-  font-family: "Font Awesome 5 Free";
+.fa-solid ::before {
+  font-family: "Font Awesome 6 Free";
 }
