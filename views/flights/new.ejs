@@ -5,7 +5,7 @@
 <main>
 <h1><%= title %></h1>
 
-<form class="form-group" id="new-form" action="">
+<form class="form-group" id="new-form" action="/flights" method="POST">
   <label for="airline-select">Airline:</label>
   <select name="airline" id="airline-select">
     <option value="American">American</option>
@@ -19,8 +19,9 @@
     <option value="DFW">DFW</option>
     <option value="LAX">LAX</option>
     <option value="SAN">SAN</option>
+    <option value="DEN">DEN</option>
     </select>
-    <label for="flightNo-input">Flight Number:</label>
+    <label for="flightNo-input" placeholder="10-9999">Flight Number:</label>
     <input type="text" name="flightNo" id="flight-no-input"> 
     <label for="departure-input">Departure:</label>
     <input type="datetime-local" name="departs" id="departure-input">

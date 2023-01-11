@@ -3,8 +3,15 @@
   <nav>
     <i class="fa-solid fa-plane-arrival fa-2x"></i>
     <a 
-      href="/flights/new" <%- title === 'Add Flight' ? 'class="active"' : '' %>
+      href="/flights/new"
+      <%- title === 'Add Flight' ? 'class="active"' : '' %>
     >
       ADD FLIGHT
     </a>
+    <a 
+    href="/flights"
+      <%- title === 'All flights' ? 'class="active"' : '' %>
+  >
+    ALL FLIGHTS
+  </a>
   </nav>
