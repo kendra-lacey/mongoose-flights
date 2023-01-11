@@ -2,7 +2,7 @@ import { Flight } from "../models/flight.js"
 
 
 
-function newFlights(req, res) {
+function newFlight(req, res) {
   res.render('flights/new', {
   title: "Add Flight",
   })
@@ -59,7 +59,7 @@ function deleteFlight(req, res) {
 
 
 export {
-  newFlights as new,
+  newFlight as new,
   create,
   index,
   show,
