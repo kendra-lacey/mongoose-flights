@@ -11,6 +11,7 @@
         <th scope="col">Airport</th>
         <th scope="col">Flight Number</th>
         <th scope="col">Departure</th>
+        <th scope="col">✈️</th>
       </tr>
     </thead>
     <tbody>
@@ -23,7 +24,7 @@
           <td><%= flight.flightNo %></td>
           <td><%= flight.departs %></td>
           <td> <form 
-            action="/movies/<%= movie._id %>?_method=DELETE" 
+            action="/flights/<%= flight._id %>?_method=DELETE" 
             method="POST"
           >
             <button>𝙓</button>
