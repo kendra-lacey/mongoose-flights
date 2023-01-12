@@ -9,12 +9,20 @@ function newFlight(req, res) {
 }
 
 function create(req, res) {
+  for (let key in req.body) {
+    if (req.body[key] === '') {
+    let date = new Date()
+    let oneYearFromNow = date.getFullYear() + 1
+    req.body.departs = date
+  }
+}
 // use the model to create a flight (using form data in req.body)
   Flight.create(req.body)
-  .then(movie => {
+  .then(flight => {
   // redirect to new flights
     res.redirect('flights/new')
   })
+
   .catch(err => {
     console.log(err)
     res.redirect('/flights/new')
@@ -56,6 +64,34 @@ function deleteFlight(req, res) {
   })
 }
 
+function edit(req, res) {
+  Flight.findById(req.params.id)
+  .then(flight => {
+    res.render('flights/edit', {
+      title: 'Edit Flight',
+      flight: flight
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/flights')
+  })
+}
+
+function update(req, res) {
+  // for (let key in req.body) {
+  //   if (req.body[key] === '') delete req.body[key]
+  // }
+  console.log(req.params.id)
+  Flight.findByIdAndUpdate(req.params.id, req.body, { new: true })
+  .then(flight => {
+    res.redirect(`/flights/${flight._id}`)
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/flights')
+  })
+}
 
 
 export {
@@ -64,4 +100,6 @@ export {
   index,
   show,
   deleteFlight as delete,
+  edit,
+  update
 }

@@ -12,11 +12,17 @@ router.get('/new', flightsCtrl.new)
 // GET/ FLIGHTS/:ID
 router.get('/:id', flightsCtrl.show)
 
+// GET/ FLIGHTS/:ID/EDIT
+router.get('/:id/edit', flightsCtrl.edit)
+
 // POST/ FLIGHTS
 router.post('/', flightsCtrl.create)
 
 // DELETE /FLIGHTS/:ID
 router.delete('/:id', flightsCtrl.delete)
+
+// PUT /FLIGHTS/:ID
+router.put('/:id', flightsCtrl.update)
 
 
 export {
