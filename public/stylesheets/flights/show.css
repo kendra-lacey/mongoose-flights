@@ -37,6 +37,3 @@ section div:nth-child(even) {
   font-weight: bold;
 }
 
-body > main {
-background-color: blueviolet;
-}
