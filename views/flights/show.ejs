@@ -59,10 +59,27 @@
       <option value="<%= meal._id %>"><%= meal.name %></option>
     <% }) %>
     </select>
-    <button type="submit"> Meal</button>
+    <button class="btn btn-outline-success"type="submit"> Add Meal</button>
   </form>
-
-      <a href="/flights"></a>
+  <% if (meals.length) { %>
+    <table>
+      <thead>
+        <tr>
+          <th>Mealz</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% meals.forEach(function(meal) { %>
+          <tr>
+            <td><%= meal.name %> </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+    <% } else { %>
+      <h3>No Meals Yet</h3>
+    <% } %> 
+      <a href="/flights">Go Back</a>
 
   
 <%- include('../partials/footer') %>
