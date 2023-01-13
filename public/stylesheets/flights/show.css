@@ -31,9 +31,11 @@ section {
   display: grid;
   grid-template-columns: auto auto;
   grid-gap: 16px;
+  text-align: center;
 }
 
 section div:nth-child(even) {
   font-weight: bold;
 }
+
 

@@ -36,7 +36,7 @@ const flightSchema = new mongoose.Schema({
       return date.setFullYear(date.getFullYear()+1)
     },
   },
-  ticket: [ticketSchema],
+  tickets: [ticketSchema],
 }, {
     timestamps: true
 })
