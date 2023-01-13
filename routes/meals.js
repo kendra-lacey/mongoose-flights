@@ -4,10 +4,10 @@ import * as mealsCtrl from '../controllers/meals.js'
 const router = Router()
 
 //GET /MEALS/NEW
-router.get('/new', mealsCtrl.new)
+router.get('/', mealsCtrl.show)
 
 //POST /MEALS
-router.post('/', mealsCtrl.create)
+router.post('/new', mealsCtrl.create)
 
 export {
   router

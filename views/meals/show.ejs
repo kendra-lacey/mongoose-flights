@@ -4,14 +4,20 @@
 
 <main>
 	<h1><%= title %></h1>
-  <p>Please first ensure that the Meal is not in the dropdown
-    <select>
+  <p>
+    <% if (meals.length) { %>
+      Meals:
+      <ol>
       <% meals.forEach(function(meal) { %>
-        <option><%= meal.name %></option>
-      <% }) %>
-    </select>
+        <li><%= meal.name %></li>
+        <% }) %>
+      </ol>
+      <% } else { %>
+        <h3>No Meals Yet</h3>
+      <% } %> 
+
   </p>
-  <form id="add-meal-form" action="/meals" method="POST">
+  <form id="add-meal-form" action="/meals/new" method="POST">
     <label for="meal-input">Meal-Food-nom-noms:</label>
     <input type="text" name="name" id="meal-input" autocomplete="off">
     <button type="submit" class="btn btn-outline-success">Add Meal</button>

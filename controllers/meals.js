@@ -2,11 +2,11 @@ import { Meal } from "../models/meal.js"
 
 
 
-function newMeal(req, res) {
+function show(req, res) {
   Meal.find({})
   .then(meals => {
-    res.render('meals/new', {
-      title: 'Add Meal 🍲',
+    res.render('meals/show', {
+      title: 'Meals 🍲',
       meals : meals,
     })
   })
@@ -19,7 +19,7 @@ function newMeal(req, res) {
 function create(req, res) {
   Meal.create(req.body)
   .then(meal => {
-    res.redirect('/meals/new')
+    res.redirect('/meals')
   })
   .catch(err => {
     console.log("error")
@@ -28,6 +28,6 @@ function create(req, res) {
 }
 
 export {
-newMeal as new,
+show,
 create,
 }

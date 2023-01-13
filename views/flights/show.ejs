@@ -50,7 +50,17 @@
     </table>
     <% } else { %>
       <h3>No Tickets Yet</h3>
-      <% } %> 
+    <% } %> 
+      <h2>Pick a Meal 🍲</h2>
+  <form action="/flights/<%= flight._id %>/meals" method="POST">
+    <label for="meal-input">Select Meal:</label>
+    <select name="mealId" id="meal-input">
+    <% meals.forEach(meal => { %>
+      <option value="<%= meal._id %>"><%= meal.name %></option>
+    <% }) %>
+    </select>
+    <button type="submit"> Meal</button>
+  </form>
 
       <a href="/flights"></a>
 
