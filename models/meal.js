@@ -2,8 +2,8 @@ import mongoose from "mongoose"
 
 const Schema = mongoose.Schema
 
-const mealSchema = mongoose.Schema({
-  name: {type: String}
+const mealSchema = new Schema({
+  name: {type: String, required: true }
 },{
   timestamps: true
 })
